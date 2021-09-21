@@ -1,0 +1,57 @@
+class Pystack:
+    def __init__(self):
+        self.stack = []
+
+    def push(self,data):
+        self.stack.append(data)
+
+    def pop(self):
+        self.stack.pop()
+
+    def top(self):
+        self.stack[len(self.stack)-1]
+
+    def is_empty(self):
+        return self.stack == []
+
+    def print_stack(self):
+        for s in range(len(self.stack)-1,-1,-1):
+            print(self.stack[s])
+
+if __name__ == '__main__':
+    stk = Pystack()
+
+    while True:
+        print('push <enter the value to be pushed>')
+        print('pop')
+        print('top')
+        print('print')
+        print('quit')
+
+        op = input('Enter the stack ops -> ').split()
+
+        user_op = op[0].lower()
+
+        if user_op == 'push':
+            stk.push(int(op[1]))
+
+        elif user_op == 'pop':
+            if stk.is_empty():
+                print('Stack is empty')
+            else:
+                print('You Popped -> ',stk.pop())
+
+        elif user_op == 'top':
+            print('topmost element -> ',stk.top())
+
+        elif user_op == 'print':
+            if stk.is_empty():
+                print('Stack is empty')
+            else:
+                stk.print_stack()
+
+        elif user_op == 'quit':
+            break
+
+
+
