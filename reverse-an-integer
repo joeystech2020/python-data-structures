@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+    x = 234567
+
+    rev_x = 0
+
+    while(x !=0 ):
+        rem = x % 10
+
+        rev_x = (rev_x * 10) + rem
+
+        x = x // 10
+
+    print("The reverse is {}".format(rev_x))
